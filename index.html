@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <style>
+        body {
+            background-color: #ffffff; /* White background */
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        
+        .container {
+           
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 2px solid violet;
+            background-color: #ffffff; /* Light gray background for the container */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Box shadow for a subtle effect */
+        }
+
+        h1 {
+            color: #333; /* Dark gray text color */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #555; /* Gray text color for labels */
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc; /* Gray border */
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50; /* Green background for the submit button */
+            color: #fff; /* White text color for the submit button */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #d03f0a; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="container">
+        <h1>Welcome</h1>
+        <form method="post" name="google-sheet">
+            <label for="username">Enter details</label>
+           
+            
+            <textarea name="details" id="username" cols="30" rows="10"></textarea>
+<br>
+<br>
+            <input type="submit" value="Login" name="login">
+        </form>
+    </div>
+
+    <script>
+
+    const scriptURL =
+    
+    'https://script.google.com/macros/s/AKfycbz1PsTIQ0i0shvXn__OjqB-xpOOuqgGx9OzMncv4-GIE0RG4uCap1Tvc2-c0SaD0ulKVg/exec'
+    
+    const form = document.forms['google-sheet']
+    
+   
+    
+    form.addEventListener('submit', e => {
+    
+    e.preventDefault()
+    
+    fetch (scriptURL, { method: 'POST', body: new FormData (form) }) 
+    
+    .then(response => alert ("Thanks for Contacting us..! We Will Contact You Soon..."))
+    
+    .catch(error => console.error('Error!', error.message))
+    })
+    </script>
+</body>
+</html>
